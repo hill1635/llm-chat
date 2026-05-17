@@ -5,7 +5,7 @@ import { StyleSheet, TextInput, type TextInputProps } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 export type ThemedTextInputProps = TextInputProps & {
-  type?: "default" | "subdued" | "highlighted";
+  type?: "default" | "clear" | "subdued" | "highlighted";
   themeColor?: ThemeColor;
 };
 
@@ -44,5 +44,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     borderRadius: Spacing.four,
+  },
+  clear: {
+    height: 40,
+    margin: 12,
+    borderWidth: 0,
+    padding: 10,
+    backgroundColor: "transparent",
   },
 });

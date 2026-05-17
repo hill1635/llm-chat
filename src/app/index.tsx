@@ -50,7 +50,7 @@ export default function HomeScreen() {
           />
           <HintRow title="Dev tools" hint={getDevMenuHint()} />
           <ThemedTextInput
-            type="default"
+            type="clear"
             placeholder="Start a chat"
           ></ThemedTextInput>
         </ThemedView>
