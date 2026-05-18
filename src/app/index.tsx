@@ -6,6 +6,7 @@ import { ThemedView } from "@/components/themed-view";
 import { WebBadge } from "@/components/web-badge";
 import { BottomTabInset, MaxContentWidth, Spacing } from "@/constants/theme";
 import * as Device from "expo-device";
+import React from "react";
 import { Platform, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -29,6 +30,8 @@ function getDevMenuHint() {
 }
 
 export default function HomeScreen() {
+  const [text, onChangeText] = React.useState("");
+
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
@@ -52,6 +55,8 @@ export default function HomeScreen() {
           <ThemedTextInput
             type="clear"
             placeholder="Start a chat"
+            onChangeText={onChangeText}
+            value={text}
           ></ThemedTextInput>
         </ThemedView>
 

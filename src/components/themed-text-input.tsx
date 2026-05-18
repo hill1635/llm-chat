@@ -10,6 +10,8 @@ export type ThemedTextInputProps = TextInputProps & {
 };
 
 export function ThemedTextInput({
+  onChangeText,
+  value,
   placeholder,
   style,
   type = "default",
@@ -17,7 +19,6 @@ export function ThemedTextInput({
   ...rest
 }: ThemedTextInputProps) {
   const theme = useTheme();
-  const [text, onChangeText] = React.useState("");
 
   return (
     <SafeAreaProvider>
@@ -29,7 +30,7 @@ export function ThemedTextInput({
           ]}
           onChangeText={onChangeText}
           placeholder={placeholder}
-          value={text}
+          value={value}
           {...rest}
         />
       </SafeAreaView>
