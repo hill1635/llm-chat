@@ -1,7 +1,7 @@
 import { AnimatedIcon } from "@/components/animated-icon";
+import { ChatInput } from "@/components/chat-input";
 import { HintRow } from "@/components/hint-row";
 import { ThemedText } from "@/components/themed-text";
-import { ThemedTextInput } from "@/components/themed-text-input";
 import { ThemedView } from "@/components/themed-view";
 import { WebBadge } from "@/components/web-badge";
 import { BottomTabInset, MaxContentWidth, Spacing } from "@/constants/theme";
@@ -30,8 +30,6 @@ function getDevMenuHint() {
 }
 
 export default function HomeScreen() {
-  const [text, onChangeText] = React.useState("");
-
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
@@ -52,12 +50,7 @@ export default function HomeScreen() {
             hint={<ThemedText type="code">src/app/index.tsx</ThemedText>}
           />
           <HintRow title="Dev tools" hint={getDevMenuHint()} />
-          <ThemedTextInput
-            type="clear"
-            placeholder="Start a chat"
-            onChangeText={onChangeText}
-            value={text}
-          ></ThemedTextInput>
+          <ChatInput type="default" />
         </ThemedView>
 
         {Platform.OS === "web" && <WebBadge />}
